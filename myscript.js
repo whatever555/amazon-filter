@@ -36,16 +36,17 @@ $(document).ready(function() {
               }
               observer.disconnect();
               var containerClass = ".s-result-item";
-              var linkClass = ".s-result-item h5 .a-link-normal:first-of-type, a-carousel-card .a-link-normal:first-of-type";
-              if (listType == "asin") {
-                containerClass = ".asin_container";
-                linkClass = ".asin-faceout-link";
-              }
+              var linkClass = "ul .s-result-item .s-access-detail-page.a-link-normal:first-of-type, .s-result-item h5 .a-link-normal:first-of-type, .a-carousel-card .a-link-normal:first-of-type";
+
+              //if (listType == "asin") {
+                //containerClass = ".asin_container";
+                //linkClass = ".asin-faceout-link";
+              //}
               $(linkClass).each(function(index) {
                 if (!$(this).hasClass("checked-by-filter")) {
                   var $el = $(this);
                   var link = $el.attr("href").replace("http:", "https:");
-
+                  $el.css({'border': '4px solid red'})
                   //link = link.replace("https:","");
                   $.get(link, function(data) {
                   if (data.indexOf('duct Dimension') > -1)
