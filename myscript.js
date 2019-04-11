@@ -136,6 +136,10 @@ $(document).ready(function() {
       myLinkHtml =
         "<a target='_blank' style='float:right;margin-right:12px;' class='bul-but play-geogee-btn bulgeani' href='https://geogee.me'>[Play Geogee!]</a>";
       }
+      if (Math.floor(Math.random() * 5) > 3){
+      myLinkHtml =
+        "<a target='_blank' style='float:right;margin-right:12px;' class='bul-but play-geogee-btn bulgeani' href='https://detective-stories.com'>[Play Detective Stories!]</a>";
+      }
 
       function updateNotificationText() {
 
