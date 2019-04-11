@@ -3,7 +3,7 @@
 
   "name": "Amazon Global Shipping Filter",
   "description": "Filter Amazon search (if item can be shipped to your location)",
-  "version": "260.55",
+  "version": "260.7",
   "permissions": [
     "activeTab",
     "storage"
