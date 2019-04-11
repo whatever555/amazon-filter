@@ -41,37 +41,41 @@
 }
 .irelandFilterHidden {
 	background-color: #efefef;
-
 }
-.irelandFilterHidden .s-access-title:before{
-   background:#fcfcfc;
+.irelandFilterHidden:after{
    content: 'No delivery.';
+   font-size: 16px;
+   background:#fcfcfc;
    color:red;
    font-weight: bold;
    display:block;
 }
 .delayedDelivery {
 }
-.delayedDelivery .s-access-title:before{
-   background:#fcfcfc;
+.delayedDelivery:after{
    content: 'Delayed delivery';
+   background:#fcfcfc;
+   font-size: 16px;
    color: #000044;
    font-weight: bold;
    display:block;
 }
 
-.ifOutofStock .s-access-title:before{
+.ifOutofStock:after{
    content: 'Out of stock.';
    color:red;
+   font-size: 16px;
    font-weight: bold;
    display:block;
 }
 .out-of-stock-filter{#
 }
 .ifOutofStock{
+   font-size: 16px;
 	background:#fcfcfc;
 }
 .in-stock-on {
+   font-size: 16px;
 	font-weight: bold;
 }
 
