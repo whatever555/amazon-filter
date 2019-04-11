@@ -26,9 +26,9 @@ $(document).ready(function() {
           if (currentTimerIndex == currentTimeriIndexCompare) {
             if (checkStuff) {
               removeCount = 0;
-              $notificationArea = $("#s-result-count");
+              $notificationArea = $("#nav-subnav");
               if ($("#amazon-helper-notifications").length == 0) {
-                $notificationArea.append(
+                $notificationArea.after(
                   '<span id="amazon-helper-notifications"></span>'
                 );
               } else {
@@ -38,15 +38,15 @@ $(document).ready(function() {
               var containerClass = ".s-result-item";
               var linkClass = "ul .s-result-item .s-access-detail-page.a-link-normal:first-of-type, .s-result-item h5 .a-link-normal:first-of-type, .a-carousel-card .a-link-normal:first-of-type";
 
-              //if (listType == "asin") {
-                //containerClass = ".asin_container";
-                //linkClass = ".asin-faceout-link";
-              //}
+              if (listType == "asin") {
+                containerClass = ".asin_container";
+                linkClass = ".asin-faceout-link";
+              }
               $(linkClass).each(function(index) {
                 if (!$(this).hasClass("checked-by-filter")) {
                   var $el = $(this);
                   var link = $el.attr("href").replace("http:", "https:");
-                  $el.css({'border': '4px solid red'})
+                  //$el.css({'border': '4px solid red'})
                   //link = link.replace("https:","");
                   $.get(link, function(data) {
                   if (data.indexOf('duct Dimension') > -1)
@@ -105,8 +105,8 @@ $(document).ready(function() {
             }
             // define what element should be observed by the observer
             // and what types of mutations trigger the callback
-            if ($("#rightResultsATF").length != 0) {
-              observer.observe(document.getElementById("rightResultsATF"), {
+            if ($("#rhf-shoveler").length != 0) {
+              observer.observe(document.getElementById("rhf-shoveler"), {
                 subtree: true,
                 attributes: false,
                 characterData: true
@@ -158,14 +158,15 @@ $(document).ready(function() {
           $("#amazon-helper-notifications").fadeOut();
         });
         $(".ifreveal").on("click", function() {
+          const container = ".a-carousel-card, .s-result-item";
           if (localStorage.autohide && localStorage.autohide == 1) {
             localStorage.autohide = 0;
             $(this).html("Hide non-deliverable items in all listings?");
-            $(".irelandFilterHidden").fadeIn();
+            $(".irelandFilterHidden").closest(container).fadeIn();
           } else {
             localStorage.autohide = 1;
             $(this).html("Show non-deliverable items all listings?");
-            $(".irelandFilterHidden").fadeOut();
+            $(".irelandFilterHidden").closest(container).fadeOut();
           }
         });
 
